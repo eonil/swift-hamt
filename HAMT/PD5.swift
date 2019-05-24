@@ -11,6 +11,7 @@ public struct PD5<Key,Value> where Key: Hashable {
     private var root = PD5Bucket64<PD5Key<Key>,Value>()
     private var sum = 0
 
+    @inlinable
     public init() {}
 
     public var isEmpty: Bool {

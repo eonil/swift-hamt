@@ -11,23 +11,19 @@ struct PD5CompressedTable64<T>: Sequence {
     private var slots = ContiguousArray<T>()
 
     @inlinable
-    @inline(__always)
     var capacity: Int {
         return 64
     }
     @inlinable
-    @inline(__always)
     var count: Int {
         return bitmap.nonzeroBitCount
     }
     @inlinable
-    @inline(__always)
     func makeIterator() -> ContiguousArray<T>.Iterator {
         return slots.makeIterator()
     }
 
     @inlinable
-    @inline(__always)
     func get(index k: UInt, default defv: @autoclosure() -> T) -> T {
         assert(k < 64)
         assert(0 <= k)
@@ -43,7 +39,6 @@ struct PD5CompressedTable64<T>: Sequence {
         }
     }
     @inlinable
-    @inline(__always)
     func get1(index k: UInt) -> T? {
         assert(k < 64)
         assert(0 <= k)
@@ -60,7 +55,6 @@ struct PD5CompressedTable64<T>: Sequence {
     }
 
     @inlinable
-    @inline(__always)
     mutating func set(index k: UInt, _ v: T) {
         assert(k < 64)
         assert(0 <= k)
@@ -77,7 +71,6 @@ struct PD5CompressedTable64<T>: Sequence {
         }
     }
     @inlinable
-    @inline(__always)
     mutating func unset(index k: UInt) {
         assert(k < 64)
         assert(0 <= k)

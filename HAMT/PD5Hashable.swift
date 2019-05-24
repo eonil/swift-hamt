@@ -8,5 +8,6 @@
 import Foundation
 
 protocol PD5Hashable: Equatable {
+    @inlinable
     var hashBits: UInt { get }
 }

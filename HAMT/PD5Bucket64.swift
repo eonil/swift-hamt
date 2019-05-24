@@ -38,7 +38,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
     private(set) var sum = 0
     private(set) var slots = SlotCollection()
 
-    @usableFromInline
+    @inlinable
     init() {}
 
     private init(config x: PD5BucketConfig) {
@@ -46,11 +46,11 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         config = x
     }
 
-    @usableFromInline
+    @inlinable
     var count: Int {
         return sum
     }
-    @usableFromInline
+    @inlinable
     subscript(_ k: K) -> V? {
         get {
             let h = k.hashBits
@@ -67,7 +67,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         }
     }
 
-    @usableFromInline
+    @inlinable
     subscript(_ k: K, default defv: @autoclosure() -> V) -> V {
         get {
             let h = k.hashBits
@@ -79,13 +79,13 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         }
     }
 
-    @usableFromInline
+    @inlinable
     func slotIndex(for h: UInt) -> UInt {
         let h1 = h >> (hashBitCountPerLevel * UInt(config.level))
         let ik = h1 & hashBitMaskPerLevel
         return ik
     }
-    @usableFromInline
+    @inlinable
     func find(_ h: UInt, _ k: K) -> V? {
 //        let ik = slotIndex(for: h)
 //        let slot = slots.get(index: ik, default: .none)
@@ -118,7 +118,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         case inserted
         case replaced(V)
     }
-    @usableFromInline
+    @inlinable
     @discardableResult
     mutating func insertOrReplace(_ h: UInt, _ k: K, _ v: V) -> InsertOrReplaceResult {
         precondition(count < .max)
@@ -184,7 +184,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         case removed(V)
         case ignored
     }
-    @usableFromInline
+    @inlinable
     @discardableResult
     mutating func removeOrIgnore(_ h: UInt, _ k: K) -> RemoveOrIgnoreResult {
         let ik = slotIndex(for: h)

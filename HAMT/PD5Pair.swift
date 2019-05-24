@@ -8,8 +8,8 @@
 struct PD5Pair<K,V> {
     var key: K
     var value: V
+    
     @inlinable
-    @inline(__always)
     init(_ k: K, _ v: V) {
         key = k
         value = v
