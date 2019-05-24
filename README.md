@@ -24,7 +24,7 @@ Base performance of `HAMT` is about 100x times slower than ephemeral `Swift.Dict
 
 ![Get Performance](PerfTool/Get.png)
 
-Therefore, `HAMT` performs better if your dataset is potentially can grow more than
+Therefore, `HAMT` performs better if your dataset potentially can grow more than
 several thousands.
 
 Here's another performance comparison with copying B-Tree. 
@@ -43,7 +43,7 @@ Maintenance
 ---------------
 `PD4` type was an implementation of hash-trie, and deprecated due to
 high rate of wasted memory. `PD5` implements HAMT and shows nearly
-same performance with `PD4`.
+same performance with `PD4` with far less memory consumption.
 
 
 
