@@ -20,7 +20,7 @@ Performance
 hash resolution limit (`(2^6)^10` items) for read/write/copy regardless of item count
 where copying `Swift.Dictionary` takes linearly increased time.
 
-Base performance of `HAMT` is about 10x times slower than ephemeral `Swift.Dictionary`.
+Base read performance of `HAMT` is about 10x times slower than ephemeral `Swift.Dictionary`.
 
 ![Get Performance](PerfTool/Get.png)
 
