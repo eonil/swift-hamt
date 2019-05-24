@@ -7,7 +7,7 @@
 
 import XCTest
 import GameKit
-@testable import SwiftHashTrie
+@testable import HAMT
 
 /// Insert/update/remove mock.
 final class PD4BucketMock2 {

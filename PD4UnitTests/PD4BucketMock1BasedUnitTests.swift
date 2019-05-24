@@ -9,7 +9,7 @@
 //import Foundation
 //import XCTest
 //import GameKit
-//@testable import SwiftHashTrie
+//@testable import HAMT
 //
 //class PD4BucketMock1BasedUnitTests: XCTestCase {
 //    func testMonteCarlo1() {

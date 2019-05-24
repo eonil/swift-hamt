@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import SwiftHashTrie
+@testable import HAMT
 
 struct PD4Stat: CustomStringConvertible {
     var config = PD4BucketConfig(bucketCapInBytes: 4096, slotStrideInBytes: 64)

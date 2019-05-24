@@ -1,6 +1,6 @@
 ////
 ////  PD5Bucket256.swift
-////  SwiftHashTrie-macOS
+////  HAMT
 ////
 ////  Created by Henry on 2019/05/23.
 ////

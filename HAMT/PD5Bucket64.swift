@@ -207,12 +207,9 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
             case .removed(let v):
                 sum -= 1
                 switch b.sum {
-                case 0:
-                    slots.set(index: ik, .none)
-                case 1:
-                    slots.set(index: ik, .unique(b.ADHOC_collectOne()))
-                default:
-                    slots.set(index: ik, .branch(b))
+                case 0:     slots.set(index: ik, .none)
+                case 1:     slots.set(index: ik, .unique(b.ADHOC_collectOne()))
+                default:    slots.set(index: ik, .branch(b))
                 }
                 return .removed(v)
             case .ignored:

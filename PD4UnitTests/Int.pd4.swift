@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import SwiftHashTrie
+@testable import HAMT
 
 extension Int: PD4Hashable {
     public var hashBits: Int {

@@ -5,10 +5,7 @@
 //  Created by Henry on 2019/05/23.
 //
 
-import Foundation
-
 extension PD5Bucket64 {
-//    typealias PairSequence = LazySequence<FlattenSequence<LazyMapSequence<DFSSlotSequence, Slot.CurrentLevelPairs>>>
     /// All pairs in this bucket subtree.
     var pairs: PairSequence {
         return PairSequence(source: dfsSlots.lazy.flatMap({ s in s.currentLevelPairs }))

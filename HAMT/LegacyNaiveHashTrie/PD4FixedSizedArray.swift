@@ -1,6 +1,6 @@
 //
 //  PD4FixedSizedArray.swift
-//  SwiftHashTrie-macOS
+//  HAMT
 //
 //  Created by Henry on 2019/05/22.
 //

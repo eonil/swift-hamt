@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import SwiftHashTrie
+@testable import HAMT
 
 extension PD4Bucket {
 //    func indexPath(of k: K) -> IndexPath? {

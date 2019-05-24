@@ -8,7 +8,7 @@
 import Foundation
 import XCTest
 import GameKit
-@testable import SwiftHashTrie
+@testable import HAMT
 
 class PD4BucketMocklessBasedUnitTests: XCTestCase {
 //    func testCase1() {

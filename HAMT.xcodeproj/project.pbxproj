@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4547CC6722968DE80080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CC6622968DE80080C52E /* HAMT.swift */; };
-		4547CC712296B1240080C52E /* PD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* PD5.swift */; };
+		4547CC712296B1240080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* HAMT.swift */; };
 		4547CC722296B1240080C52E /* PD5Bucket64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456709462295654F0083EF06 /* PD5Bucket64.swift */; };
 		4547CC732296B1240080C52E /* PD5Slot64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC432922966AA9001B101E /* PD5Slot64.swift */; };
 		4547CC742296B1240080C52E /* PD5Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC43272296585A001B101E /* PD5Iterator.swift */; };
 		4547CC752296B1240080C52E /* PD5CompressedTable64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC432522964571001B101E /* PD5CompressedTable64.swift */; };
 		4547CC762296B1240080C52E /* PD5Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC432B229670B0001B101E /* PD5Hashable.swift */; };
-		4547CC772296B1250080C52E /* PD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* PD5.swift */; };
-		4547CC782296B1250080C52E /* PD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* PD5.swift */; };
-		4547CC792296B1290080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CC6622968DE80080C52E /* HAMT.swift */; };
-		4547CC7A2296B1290080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CC6622968DE80080C52E /* HAMT.swift */; };
-		4547CC7B2296B1360080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CC6622968DE80080C52E /* HAMT.swift */; };
+		4547CC772296B1250080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* HAMT.swift */; };
+		4547CC782296B1250080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* HAMT.swift */; };
 		4547CCC42296B43C0080C52E /* SortedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CCB32296B43C0080C52E /* SortedSet.swift */; };
 		4547CCC52296B43C0080C52E /* BTreeComparisons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CCB42296B43C0080C52E /* BTreeComparisons.swift */; };
 		4547CCC62296B43C0080C52E /* SortedBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547CCB52296B43C0080C52E /* SortedBag.swift */; };
@@ -50,7 +46,7 @@
 		4563604D2296790A00AAD1DC /* PD5Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC43272296585A001B101E /* PD5Iterator.swift */; };
 		4563604E2296790A00AAD1DC /* PD5CompressedTable64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC432522964571001B101E /* PD5CompressedTable64.swift */; };
 		4563604F2296790A00AAD1DC /* PD5Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC432B229670B0001B101E /* PD5Hashable.swift */; };
-		456360512296798000AAD1DC /* PD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* PD5.swift */; };
+		456360512296798000AAD1DC /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* HAMT.swift */; };
 		456709922295BB790083EF06 /* PD4Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456709912295BB790083EF06 /* PD4Stat.swift */; };
 		456B65A52294EB080063FCB5 /* FormattingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B65A12294EB080063FCB5 /* FormattingUtilities.swift */; };
 		456B65A62294EB080063FCB5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B65A32294EB080063FCB5 /* main.swift */; };
@@ -130,7 +126,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4547CC6622968DE80080C52E /* HAMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAMT.swift; sourceTree = "<group>"; };
 		4547CCB32296B43C0080C52E /* SortedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedSet.swift; sourceTree = "<group>"; };
 		4547CCB42296B43C0080C52E /* BTreeComparisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTreeComparisons.swift; sourceTree = "<group>"; };
 		4547CCB52296B43C0080C52E /* SortedBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedBag.swift; sourceTree = "<group>"; };
@@ -148,7 +143,7 @@
 		4547CCC12296B43C0080C52E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4547CCC22296B43C0080C52E /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		4547CCC32296B43C0080C52E /* BTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTreeNode.swift; sourceTree = "<group>"; };
-		456360502296798000AAD1DC /* PD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5.swift; sourceTree = "<group>"; };
+		456360502296798000AAD1DC /* HAMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAMT.swift; sourceTree = "<group>"; };
 		45670944229553AD0083EF06 /* PD4FixedSizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD4FixedSizedArray.swift; sourceTree = "<group>"; };
 		456709462295654F0083EF06 /* PD5Bucket64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5Bucket64.swift; sourceTree = "<group>"; };
 		4567094A22956E8B0083EF06 /* PD4BucketRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD4BucketRef.swift; sourceTree = "<group>"; };
@@ -316,8 +311,7 @@
 		456B65512294EA570063FCB5 /* HAMT */ = {
 			isa = PBXGroup;
 			children = (
-				4547CC6622968DE80080C52E /* HAMT.swift */,
-				456360502296798000AAD1DC /* PD5.swift */,
+				456360502296798000AAD1DC /* HAMT.swift */,
 				45F55F4D2296C4C800840163 /* PD5Bucket.swift */,
 				456709462295654F0083EF06 /* PD5Bucket64.swift */,
 				45F55F472296C11900840163 /* PD5BucketConfig.swift */,
@@ -615,8 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F55F4C2296C46500840163 /* PD5Pair.swift in Sources */,
-				456360512296798000AAD1DC /* PD5.swift in Sources */,
-				4547CC6722968DE80080C52E /* HAMT.swift in Sources */,
+				456360512296798000AAD1DC /* HAMT.swift in Sources */,
 				456360442296790900AAD1DC /* PD5CompressedTable64.swift in Sources */,
 				45F55F482296C11900840163 /* PD5BucketConfig.swift in Sources */,
 				456360422296790900AAD1DC /* PD5Slot64.swift in Sources */,
@@ -633,14 +626,13 @@
 			files = (
 				45F55F592296C73000840163 /* PD5Pair.swift in Sources */,
 				45F55F552296C73000840163 /* PD5Bucket.swift in Sources */,
-				4547CC772296B1250080C52E /* PD5.swift in Sources */,
+				4547CC772296B1250080C52E /* HAMT.swift in Sources */,
 				456360492296790A00AAD1DC /* PD5CompressedTable64.swift in Sources */,
 				45F55F572296C73000840163 /* PD5BucketConfig.swift in Sources */,
 				456360472296790A00AAD1DC /* PD5Slot64.swift in Sources */,
 				456360462296790A00AAD1DC /* PD5Bucket64.swift in Sources */,
 				456360482296790A00AAD1DC /* PD5Iterator.swift in Sources */,
 				4563604A2296790A00AAD1DC /* PD5Hashable.swift in Sources */,
-				4547CC792296B1290080C52E /* HAMT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,14 +642,13 @@
 			files = (
 				45F55F532296C72F00840163 /* PD5Pair.swift in Sources */,
 				45F55F4F2296C72F00840163 /* PD5Bucket.swift in Sources */,
-				4547CC782296B1250080C52E /* PD5.swift in Sources */,
+				4547CC782296B1250080C52E /* HAMT.swift in Sources */,
 				4563604E2296790A00AAD1DC /* PD5CompressedTable64.swift in Sources */,
 				45F55F512296C72F00840163 /* PD5BucketConfig.swift in Sources */,
 				4563604C2296790A00AAD1DC /* PD5Slot64.swift in Sources */,
 				4563604B2296790A00AAD1DC /* PD5Bucket64.swift in Sources */,
 				4563604D2296790A00AAD1DC /* PD5Iterator.swift in Sources */,
 				4563604F2296790A00AAD1DC /* PD5Hashable.swift in Sources */,
-				4547CC7A2296B1290080C52E /* HAMT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,7 +660,6 @@
 				4547CCCA2296B43C0080C52E /* BridgedList.swift in Sources */,
 				4547CC722296B1240080C52E /* PD5Bucket64.swift in Sources */,
 				4547CCD22296B43C0080C52E /* Weak.swift in Sources */,
-				4547CC7B2296B1360080C52E /* HAMT.swift in Sources */,
 				4547CCCE2296B43C0080C52E /* BTreeBuilder.swift in Sources */,
 				4547CCCF2296B43C0080C52E /* Map.swift in Sources */,
 				4547CCC62296B43C0080C52E /* SortedBag.swift in Sources */,
@@ -684,7 +674,7 @@
 				4547CCCC2296B43C0080C52E /* BTreeCursor.swift in Sources */,
 				456B65A62294EB080063FCB5 /* main.swift in Sources */,
 				4547CCD02296B43C0080C52E /* BTreeIndex.swift in Sources */,
-				4547CC712296B1240080C52E /* PD5.swift in Sources */,
+				4547CC712296B1240080C52E /* HAMT.swift in Sources */,
 				4547CC752296B1240080C52E /* PD5CompressedTable64.swift in Sources */,
 				4547CCCB2296B43C0080C52E /* List.swift in Sources */,
 				4547CCC82296B43C0080C52E /* BTreePath.swift in Sources */,
