@@ -11,20 +11,16 @@ public struct PD5<Key,Value> where Key: Hashable {
     private var root = PD5Bucket64<PD5Key<Key>,Value>()
     private var sum = 0
 
-    @inline(__always)
     public init() {}
 
-    @inline(__always)
     public var isEmpty: Bool {
         return root.count == 0
     }
 
-    @inline(__always)
     public var count: Int {
         return sum
     }
 
-    @inline(__always)
     public subscript(_ key: Key) -> Value? {
         get {
             let k1 = PD5Key(key)
@@ -47,7 +43,6 @@ public struct PD5<Key,Value> where Key: Hashable {
 //            root[k1] = v
         }
     }
-    @inline(__always)
     public subscript(_ key: Key, default defaultValue: @autoclosure() -> Value) -> Value {
         get { return self[key] ?? defaultValue() }
         set(v) { self[key] = v }
@@ -101,13 +96,9 @@ extension PD5: Sequence {
 private struct PD5Key<K>: PD5Hashable where K: Hashable {
     let source: K
 
-    @inlinable
-    @inline(__always)
     init(_ k: K) {
         source = k
     }
-    @inlinable
-    @inline(__always)
     var hashBits: UInt {
         return UInt(bitPattern: source.hashValue)
     }

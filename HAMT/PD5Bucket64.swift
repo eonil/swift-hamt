@@ -38,23 +38,19 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
     private(set) var sum = 0
     private(set) var slots = SlotCollection()
 
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     init() {}
 
-    @inline(__always)
     private init(config x: PD5BucketConfig) {
         precondition(x.level < maxLevelCount)
         config = x
     }
 
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     var count: Int {
         return sum
     }
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     subscript(_ k: K) -> V? {
         get {
             let h = k.hashBits
@@ -71,8 +67,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         }
     }
 
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     subscript(_ k: K, default defv: @autoclosure() -> V) -> V {
         get {
             let h = k.hashBits
@@ -84,15 +79,13 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         }
     }
 
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     func slotIndex(for h: UInt) -> UInt {
         let h1 = h >> (hashBitCountPerLevel * UInt(config.level))
         let ik = h1 & hashBitMaskPerLevel
         return ik
     }
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     func find(_ h: UInt, _ k: K) -> V? {
 //        let ik = slotIndex(for: h)
 //        let slot = slots.get(index: ik, default: .none)
@@ -104,7 +97,6 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
 //        }
         return findWithPreshiftedHashBits(h, k)
     }
-    @inline(__always)
     private func findWithPreshiftedHashBits(_ h: UInt, _ k: K) -> V? {
         var h1 = h
         var b = self
@@ -126,8 +118,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         case inserted
         case replaced(V)
     }
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     @discardableResult
     mutating func insertOrReplace(_ h: UInt, _ k: K, _ v: V) -> InsertOrReplaceResult {
         precondition(count < .max)
@@ -193,8 +184,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
         case removed(V)
         case ignored
     }
-    @inlinable
-    @inline(__always)
+    @usableFromInline
     @discardableResult
     mutating func removeOrIgnore(_ h: UInt, _ k: K) -> RemoveOrIgnoreResult {
         let ik = slotIndex(for: h)
