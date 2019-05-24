@@ -202,6 +202,7 @@
 		45F7BD832297F3B4001C4BF9 /* Perf.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = Perf.numbers; sourceTree = "<group>"; };
 		45F7BD842297F456001C4BF9 /* Get.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Get.png; sourceTree = "<group>"; };
 		45F7BD852297F456001C4BF9 /* CRUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CRUD.png; sourceTree = "<group>"; };
+		45F7BD872297FB58001C4BF9 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				456B65DD2294EE2E0063FCB5 /* README.md */,
+				45F7BD872297FB58001C4BF9 /* LICENSE.md */,
 				456B65512294EA570063FCB5 /* HAMT */,
 				456B65972294EADE0063FCB5 /* PD4UnitTests */,
 				45DBBED422978C6500E80F33 /* PD5UnitTests */,
