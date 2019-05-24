@@ -47,6 +47,11 @@ public struct PD5<Key,Value> where Key: Hashable {
 //            root[k1] = v
         }
     }
+    @inline(__always)
+    public subscript(_ key: Key, default: @autoclosure() -> Value) -> Value {
+        get { return self[key] ?? `default`() }
+        set(v) { self[key] = v }
+    }
 }
 extension PD5: Sequence {
     public func makeIterator() -> Iterator {
