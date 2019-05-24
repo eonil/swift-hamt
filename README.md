@@ -24,15 +24,17 @@ Base performance of `HAMT` is about 10x times slower than ephemeral `Swift.Dicti
 
 ![Get Performance](PerfTool/Get.png)
 
-Therefore, `HAMT` performs better if your dataset potentially can grow more than
-several thousands.
-
 Here's another performance comparison with copying B-Tree. 
 Copying naive `Swift.Dictionary` is not here because it takes too much time 
 and couldn't finish the benchmark.
 
 ![CRUD Performance](PerfTool/CRUD.png)
 
+For small dataset, naive copying of `Swift.Dictionary` works better, but as 
+copying cost increases linearly, it is no longer efficieny after 1,000-5,000 items. 
+
+Therefore, `HAMT` is better if you need a persistent hash-based associative array
+data structure that can grow more than several thousands.
 
 
 
@@ -41,7 +43,7 @@ and couldn't finish the benchmark.
 
 Maintenance
 ---------------
-`HAMT` type is internally implemented using `PD5Bucket64` internal type.
+`HAMT` type is implemented using `PD5Bucket64` internally.
 `PD5Bucket64` type provides all additional properties for testing and
 validation.
 `PD4` type was an implementation of hash-trie, and deprecated due to
