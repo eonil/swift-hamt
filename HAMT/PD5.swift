@@ -48,8 +48,8 @@ public struct PD5<Key,Value> where Key: Hashable {
         }
     }
     @inline(__always)
-    public subscript(_ key: Key, default: @autoclosure() -> Value) -> Value {
-        get { return self[key] ?? `default`() }
+    public subscript(_ key: Key, default defaultValue: @autoclosure() -> Value) -> Value {
+        get { return self[key] ?? defaultValue() }
         set(v) { self[key] = v }
     }
 }
