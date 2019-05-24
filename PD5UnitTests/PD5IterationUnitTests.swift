@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import SwiftHashTrie
+@testable import HAMT
 
 class PD5IterationUnitTests: XCTestCase {
     func test2() {

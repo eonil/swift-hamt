@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "456B655C2294EA680063FCB5"
+               BlueprintIdentifier = "456B65742294EA920063FCB5"
                BuildableName = "libHAMT.a"
-               BlueprintName = "HAMT-macOS"
+               BlueprintName = "HAMT-tvOS"
                ReferencedContainer = "container:HAMT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "456B65952294EADE0063FCB5"
-               BuildableName = "PD4UnitTests.xctest"
-               BlueprintName = "PD4UnitTests"
-               ReferencedContainer = "container:HAMT.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "456B655C2294EA680063FCB5"
-            BuildableName = "libHAMT.a"
-            BlueprintName = "HAMT-macOS"
-            ReferencedContainer = "container:HAMT.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "456B655C2294EA680063FCB5"
+            BlueprintIdentifier = "456B65742294EA920063FCB5"
             BuildableName = "libHAMT.a"
-            BlueprintName = "HAMT-macOS"
+            BlueprintName = "HAMT-tvOS"
             ReferencedContainer = "container:HAMT.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "456B655C2294EA680063FCB5"
+            BlueprintIdentifier = "456B65742294EA920063FCB5"
             BuildableName = "libHAMT.a"
-            BlueprintName = "HAMT-macOS"
+            BlueprintName = "HAMT-tvOS"
             ReferencedContainer = "container:HAMT.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -7,7 +7,7 @@
 
 import XCTest
 import GameKit
-@testable import SwiftHashTrie
+@testable import HAMT
 
 final class PD5TestCase: XCTestCase {
     func test1InsertOneWithCorrectBucketStructure() {
@@ -105,13 +105,18 @@ final class PD5TestCase: XCTestCase {
         }
     }
     func test4HAMTCounting() {
-        let c = 100_000
+        // This test is too slow without optimization...
+        // Uses irreproducible random, therefore this test
+        // is not reproducible.
+        let c = 1_00_000
         var h = HAMT<Int,Int>()
-        var ks = Set<Int>()
+        var d = [Int:Int]()
+        let ns = Array(0..<c).shuffled()
+        var ks = Set<Int>(0..<c)
         for i in 0..<c {
             XCTAssertEqual(h.count, i)
             h[i] = i
-            ks.insert(i)
+            d[i] = i
             XCTAssertEqual(h[i], i)
             if i % 1_000 == 0 {
                 print("\(i)/\(c) inserted.")
@@ -121,35 +126,49 @@ final class PD5TestCase: XCTestCase {
 
         let r = GKMersenneTwisterRandomSource(seed: 0)
         var ec = c
+        var insertc = 0
+        var updatec = 0
+        var removec = 0
         for n in 0..<c {
             switch abs(r.nextInt()) % 3 {
             case 0:
-                let k = -abs(r.nextInt())
+                let k = ns[n]
                 if h[k] == nil {
                     h[k] = k
-                    ks.insert(k)
+                    d[k] = k
                     ec += 1
+                    XCTAssertEqual(h[k], k)
                     XCTAssertEqual(h.count, ec)
+                    XCTAssertTrue(h == d)
                 }
+                ks.insert(k)
+                insertc += 1
             case 1:
-                let i = abs(r.nextInt()) % ks.count
+                let i = ns[n] % ks.count
                 let k = ks[ks.index(ks.startIndex, offsetBy: i)]
-                h[k] = r.nextInt()
+                let v = ns[n]
+                h[k] = v
+                d[k] = v
+                XCTAssertEqual(h[k], v)
                 XCTAssertEqual(h.count, ec)
+                XCTAssertTrue(h == d)
+                updatec += 1
             case 2:
-                let i = abs(r.nextInt()) % ks.count
+                let i = ns[n] % ks.count
                 let k = ks[ks.index(ks.startIndex, offsetBy: i)]
                 ks.remove(k)
                 XCTAssertNotEqual(h[k], nil)
                 h[k] = nil
+                d[k] = nil
                 ec -= 1
+                XCTAssertEqual(h[k], nil)
                 XCTAssertEqual(h.count, ec)
+                XCTAssertTrue(h == d)
+                removec += 1
             default:
-                fatalError("Bug!")
+                fatalError("Bug in test code!")
             }
-            if n % 1_000 == 0 {
-                print("\(n)/\(c) operations done.")
-            }
+            print("\(n)/\(c) operations done. (insert/update/remove/count: \(insertc)/\(updatec)/\(removec)/\(h.count))")
         }
     }
 }
@@ -165,4 +184,14 @@ private struct PD5MocklessTestKey: PD5Hashable, Hashable {
     func hash(into h: inout Hasher) {
         h.combine(num)
     }
+}
+
+private func == <K,V>(_ a: HAMT<K,V>, _ b: [K:V]) -> Bool where K: Hashable, V: Equatable {
+    for k in a.keys {
+        guard b[k] == a[k] else { return false }
+    }
+    for k in b.keys {
+        guard a[k] == b[k] else { return false }
+    }
+    return true
 }
