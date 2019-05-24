@@ -41,6 +41,9 @@ and couldn't finish the benchmark.
 
 Maintenance
 ---------------
+`HAMT` type is internally implemented using `PD5Bucket64` internal type.
+`PD5Bucket64` type provides all additional properties for testing and
+validation.
 `PD4` type was an implementation of hash-trie, and deprecated due to
 high rate of wasted memory. `PD5` implements HAMT and shows nearly
 same performance with `PD4` with far less memory consumption.
@@ -51,7 +54,7 @@ same performance with `PD4` with far less memory consumption.
 Caution!
 ----------
 If you link this library, you'll notice the performance is not good as shown 
-in the graph. [As Károly Lőrentey clarified](https://github.com/attaswift/BTree#generics),
+in the graph. [As like Károly Lőrentey clarified](https://github.com/attaswift/BTree#generics),
 it's because Swift compiler does not inline externally linked functions.
 You can compile HAMT source code with your code togather to archive
 best possible performance.
