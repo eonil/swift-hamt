@@ -130,6 +130,7 @@ struct PD5Bucket64<K,V> where K: PD5Hashable {
     @inline(__always)
     @discardableResult
     mutating func insertOrReplace(_ h: UInt, _ k: K, _ v: V) -> InsertOrReplaceResult {
+        precondition(count < .max)
         let ik = slotIndex(for: h)
         let s = slots.get(index: ik, default: .none)
         switch s {
