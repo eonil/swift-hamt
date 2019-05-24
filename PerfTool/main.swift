@@ -82,16 +82,13 @@ func runCRUDPackage<T>(_: T.Type, _ ns: CRUDNames) where T: AAPerfMeasuringProto
             let n = ns.get
             print("[\(i)] \(n)")
             print("--------------------------------------------")
-            var pd = T()
-            var ks = Array<Int>()
             let m = outerLoopCount * innerLoopCount
-            ks.reserveCapacity(m)
+            let ks = Array(0..<m).shuffled()
+            var pd = T()
             for i in 0..<m {
                 pd[i] = i
-                ks.append(i)
             }
             precondition(pd.count == m)
-            ks.shuffle()
 
             var pd1 = pd
             let ss = run { i in
@@ -110,13 +107,16 @@ func runCRUDPackage<T>(_: T.Type, _ ns: CRUDNames) where T: AAPerfMeasuringProto
             let n = ns.insert
             print("[\(i)] \(n)")
             print("--------------------------------------------")
+            let m = outerLoopCount * innerLoopCount
+            let ks = Array(0..<m).shuffled()
             var pd = T()
             var pd1 = pd // Keep one copy to test persistency.
-            let ss = run { k in
+            let ss = run { i in
+                let k = ks[i]
+                pd[k] = i
                 pd1 = pd
-                pd[k] = k
             }
-            precondition(pd.count == pd1.count + 1)
+            precondition(pd.count == pd1.count)
             db.push(name: n, samples: ss)
             print("--------------------------------------------")
         }
@@ -124,21 +124,18 @@ func runCRUDPackage<T>(_: T.Type, _ ns: CRUDNames) where T: AAPerfMeasuringProto
             let n = ns.update
             print("[\(i)] \(n)")
             print("--------------------------------------------")
-            var ks = Array<Int>()
-            var pd = T()
             let m = outerLoopCount * innerLoopCount
-            ks.reserveCapacity(m)
+            let ks = Array(0..<m).shuffled()
+            var pd = T()
             for i in 0..<m {
                 pd[i] = i
-                ks.append(i)
             }
             precondition(pd.count == m)
-            ks.shuffle()
 
             var pd1 = pd
             let ss = run { i in
                 let k = ks[i]
-                pd[k] = k + 1
+                pd[k] = i
                 pd1 = pd
                 precondition(pd1.count == pd.count)
             }
@@ -151,16 +148,13 @@ func runCRUDPackage<T>(_: T.Type, _ ns: CRUDNames) where T: AAPerfMeasuringProto
             let n = ns.remove
             print("[\(i)] \(n)")
             print("--------------------------------------------")
-            var ks = Array<Int>()
-            var pd = T()
             let m = outerLoopCount * innerLoopCount
-            ks.reserveCapacity(m)
+            var ks = Array(0..<m).shuffled()
+            var pd = T()
             for i in 0..<m {
                 pd[i] = i
-                ks.append(i)
             }
             precondition(pd.count == m)
-            ks.shuffle()
 
             var pd1 = pd
             let ss = run { i in
@@ -177,16 +171,17 @@ func runCRUDPackage<T>(_: T.Type, _ ns: CRUDNames) where T: AAPerfMeasuringProto
         }
     }
 }
-//runCRUDPackage(Dictionary<Int,Int>.self, CRUDNames(
-//    get: .stdGet,
-//    insert: .stdInsert,
-//    update: .stdUpdate,
-//    remove: .stdRemove))
-//runCRUDPackage(Map<Int,Int>.self, CRUDNames(
-//    get: .btreeGet,
-//    insert: .btreeInsert,
-//    update: .btreeUpdate,
-//    remove: .btreeRemove))
+
+runCRUDPackage(Dictionary<Int,Int>.self, CRUDNames(
+    get: .stdGet,
+    insert: .stdInsert,
+    update: .stdUpdate,
+    remove: .stdRemove))
+runCRUDPackage(Map<Int,Int>.self, CRUDNames(
+    get: .btreeGet,
+    insert: .btreeInsert,
+    update: .btreeUpdate,
+    remove: .btreeRemove))
 runCRUDPackage(HAMT<Int,Int>.self, CRUDNames(
     get: .pd5Get,
     insert: .pd5Insert,
