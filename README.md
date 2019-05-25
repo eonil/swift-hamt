@@ -14,6 +14,7 @@ Use `HAMT` type. This type implements these typical dictionary-like features.
 - `isEmpty: Bool`
 - `count: Int`
 - `subscript(Key) -> Value? { get set }`
+- `subscript(Key, default: @autoclosure () -> Value) -> Value { get set }`
 - `keys: Sequence`
 - `values: Sequence`
 
