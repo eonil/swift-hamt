@@ -25,13 +25,14 @@ Base read performance of `HAMT` is about 10x times slower than ephemeral `Swift.
 ![Get Performance](PerfTool/Get.png)
 
 Here's another performance comparison with copying B-Tree. 
+Random 64-bit integer keys and values were used.
 Naive copying of `Swift.Dictionary` is not drawn here because it takes too much time 
 and couldn't finish the benchmark.
 
 ![CRUD Performance](PerfTool/CRUD.png)
 
 For small dataset, naive copying of `Swift.Dictionary` works better, but as 
-copying cost increases linearly, it is no longer efficieny after 1,000-5,000 items. 
+copying cost increases linearly, it is no longer efficient after 1,000-5,000 items. 
 
 Therefore, `HAMT` is better if you need a persistent hash-based associative array
 data structure that can grow more than several thousands.
