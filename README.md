@@ -7,7 +7,20 @@ Eonil, May 2019.
 
 Getting Started
 ------------------
-Use `HAMT` type. This type implements typical dictionary-like members.
+Use `HAMT` type. This type implements these typical dictionary-like features.
+
+- Conformance to `Sequence` protocol.
+- Conformance to `Equatable` protocol.
+- `isEmpty: Bool`
+- `count: Int`
+- `subscript(Key) -> Value? { get set }`
+- `keys: Sequence`
+- `values: Sequence`
+
+These features are not supported (maybe yet).
+
+- `Index` and index based look-up and iteration.
+- Any other collection protocol conformance.
 
 
 
@@ -20,12 +33,12 @@ Performance
 hash resolution limit (`(2^6)^10` items) for read/write/copy regardless of item count
 where copying `Swift.Dictionary` takes linearly increased time.
 
-Base read performance of `HAMT` is about 10x times slower than ephemeral `Swift.Dictionary`.
+Base read performance of `HAMT` is about 10x times slower than ephemeral
+`Swift.Dictionary` with random 64-bit integer keys and values.
 
 ![Get Performance](PerfTool/Get.png)
 
 Here's another performance comparison with copying B-Tree. 
-Random 64-bit integer keys and values were used.
 Naive copying of `Swift.Dictionary` is not drawn here because it takes too much time 
 and couldn't finish the benchmark.
 
@@ -66,9 +79,10 @@ Caution!
 ----------
 If you link this library, you'll notice the performance is not good as shown 
 in the graph. [As like Károly Lőrentey clarified](https://github.com/attaswift/BTree#generics),
-it's because Swift compiler does not inline externally linked functions.
-You can compile HAMT source code with your code togather to archive
-best possible performance.
+it's because Swift compiler does not inline and optimize over externally 
+linked functions.
+You can compile HAMT source code with your code together in same 
+module to archive best possible performance.
 
 
 
@@ -86,7 +100,8 @@ Though persistent data-structures are used to build a timeline,
 it's impossible to keep infinite number of versions. Therefore most 
 apps keep only certain number of snapshots, and this means 
 there's usually a limit in dataset size. If there's a limit, having an
-object-pool (value-pool?) can cover most scenarios.
+object-pool can provide some level of data locality in most
+scenarios.
 
 
 
@@ -106,13 +121,13 @@ if you need sorted associative array.
 
 Contribution
 ---------------
-Any contributions are welcome, and sending contribution means you agreed to redistribute
-your contribution code under "MIT License".
+Sending contribution means implicit agreement to redistribute
+your contribution under "MIT License".
 
 
 
 License
----------
+----------
 This code is licensed under "MIT License".
 Copyright Eonil, Hoon H.. 2019.
 All rights reserved.
