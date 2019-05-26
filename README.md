@@ -9,6 +9,7 @@ Getting Started
 ------------------
 Use `HAMT` type. This type implements these typical dictionary-like features.
 
+- Full "Copy-on-Write" behavior.
 - Conformance to `Sequence` protocol.
 - Conformance to `Equatable` protocol.
 - `isEmpty: Bool`
@@ -23,6 +24,13 @@ These features are not supported (maybe yet).
 - `Index` and index based look-up and iteration.
 - Any other collection protocol conformance.
 
+
+Copy-on-Write Persistence
+--------------------------------
+As like most Swift datastrctures, `HAMT` is also fully CoW compliant. This means 
+each copy of same HAMT tree shares data as much as much possible. Regardles 
+of how many copies you make, HAMT shares most portion of tree with all other
+copies.
 
 
 Performance
@@ -104,8 +112,6 @@ apps keep only certain number of snapshots, and this means
 there's usually a limit in dataset size. If there's a limit, having an
 object-pool can provide some level of data locality in most
 scenarios.
-
-
 
 
 
