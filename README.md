@@ -30,12 +30,13 @@ Performance
 `HAMT` is designed to be used as
 [*persistent datastructure*](https://en.wikipedia.org/wiki/Persistent_data_structure).
 
-`HAMT` provides near constant time (`O(10)`) performance up to 
+`HAMT` provides near constant time (`O(10)`) single element read/write performance up to 
 hash resolution limit (`(2^6)^10` items) for read/write/copy regardless of item count
 where copying `Swift.Dictionary` takes linearly increased time.
 
 Base read performance of `HAMT` is about 10x times slower than ephemeral
 `Swift.Dictionary` with random 64-bit integer keys and values.
+These numbers are measured for single element operations.
 
 ![Get Performance](PerfTool/Get.png)
 
