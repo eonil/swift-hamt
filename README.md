@@ -49,7 +49,7 @@ and couldn't finish the benchmark.
 For small dataset, naive copying of `Swift.Dictionary` works better, but as 
 copying cost increases linearly, it is no longer efficient after 1,000-5,000 items. 
 
-Therefore, `HAMT` is better if you need a persistent hash-based associative array
+Therefore, `HAMT` is better if you need a hash-based persistent associative array
 data structure that can grow more than several thousands.
 
 
