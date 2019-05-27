@@ -98,7 +98,7 @@ module to archive best possible performance.
 
 
 
-Laundry List
+Discussion
 ----------------
 For now, this `HAMT` is far slower than `Swift.Dictionary` on read.
 I think this is mainly because of cache misses due to bad data locality.
@@ -112,6 +112,12 @@ apps keep only certain number of snapshots, and this means
 there's usually a limit in dataset size. If there's a limit, having an
 object-pool can provide some level of data locality in most
 scenarios.
+
+Also I have to deal with thread-safety as Swift users expect
+certain level of thread safety. Once copied value should be isolated
+from any effect on original value regardless of thread changes.
+If I use shared flat storage, this would be tricky as Swift lacks
+static thread safety check...
 
 
 
