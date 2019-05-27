@@ -7,9 +7,15 @@ Eonil, May 2019.
 
 Getting Started
 ------------------
-Use `HAMT` type. This type implements these typical dictionary-like features.
+Use `HAMT` type. This type provides these features.
 
-- Full "Copy-on-Write" behavior.
+- Hash-based key-value storage.
+- All of read/write/copy `amortized O(1)` time. (See [Performance](#Performance) section.)  
+- Full ["Copy-on-Write"](https://en.wikipedia.org/wiki/Copy-on-write) behavior 
+with minimal amount of copying.
+
+The type provides these dictionary-like interfaces.
+   
 - Conformance to `Sequence` protocol.
 - Conformance to `Equatable` protocol.
 - `isEmpty: Bool`
@@ -35,22 +41,25 @@ copies.
 
 Performance
 ----------------
-`HAMT` is designed to be used as
+`HAMT` type in this library is designed to be used as
 [*persistent datastructure*](https://en.wikipedia.org/wiki/Persistent_data_structure).
 
-`HAMT` provides near constant time (`O(10)`) single element read/write performance up to 
-hash resolution limit (`(2^6)^10` items) for read/write/copy regardless of item count
-where copying `Swift.Dictionary` takes linearly increased time.
+`HAMT` provides near constant time (`amortized O(10)`) single element read/write/copy
+performance up to hash resolution limit (`(2^6)^10` items) regardless of contained item 
+count if hash function is well distributed. Also new copy does not take extra space unless
+gets mutated. Copy with single element mutation takes `O(1)` extra space.
+On the other hand, copying `Swift.Dictionary` takes `O(n)` time and extra space. 
 
-Base read performance of `HAMT` is about 10x times slower than ephemeral
-`Swift.Dictionary` with random 64-bit integer keys and values.
-These numbers are measured for single element operations.
+Instead, single element read/write of `HAMT` is about 10x/50x times slower
+than ephemeral `Swift.Dictionary` for random 64-bit integer keys and values.
 
 ![Get Performance](PerfTool/Get.png)
 
+Note that "operation count" in above graph is accumulated number.
+
 Here's another performance comparison with copying B-Tree. 
-Naive copying of `Swift.Dictionary` is not drawn here because it takes too much time 
-and couldn't finish the benchmark.
+Naive `Swift.Dictionary` is not drawn here because read/write performance 
+is same with ephemeral one, and copying it takes too much time and didn't finish.
 
 ![CRUD Performance](PerfTool/CRUD.png)
 
