@@ -10,7 +10,7 @@ Getting Started
 Use `HAMT` type. This type provides these features.
 
 - Hash-based key-value storage.
-- All of read/write/copy `amortized O(1)` time. (See [Performance](#Performance) section.)  
+- All of read/write/copy `O(log(n))` time up to certain number of elements (see [Performance](#Performance) section), and `O(n)` at worst.
 - Full ["Copy-on-Write"](https://en.wikipedia.org/wiki/Copy-on-write) behavior 
 with minimal amount of copying.
 
@@ -44,10 +44,11 @@ Performance
 `HAMT` type in this library is designed to be used as
 [*persistent datastructure*](https://en.wikipedia.org/wiki/Persistent_data_structure).
 
-`HAMT` provides near constant time (`amortized O(10)`) single element read/write/copy
+Under copy-persistent scenario, 
+`HAMT` provides near constant time (`O(log(n)) & max depth=10, -> O(10)`) single element read/write/copy
 performance up to hash resolution limit (`(2^6)^10` items) regardless of contained item 
 count if hash function is well distributed. Also new copy does not take extra space unless
-gets mutated. Copy with single element mutation takes `O(1)` extra space.
+gets mutated. Copy with single element mutation takes `O(1)` extra time and space.
 On the other hand, copying `Swift.Dictionary` takes `O(n)` time and extra space. 
 
 Instead, single element read/write of `HAMT` is about 10x/50x times slower
