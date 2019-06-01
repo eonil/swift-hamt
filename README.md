@@ -56,7 +56,7 @@ On the other hand, copying `Swift.Dictionary` takes `O(n)` time and extra space.
 Instead, single element read/write of `HAMT` is about 2x/50x times slower
 than ephemeral `Swift.Dictionary` for random 64-bit integer keys and values.
 
-![Get Performance](PerfTool/Get.png)
+![Get Performance](PerfTool/Get1.png)
 
 Note that "operation count" in above graph is accumulated number.
 
@@ -64,7 +64,7 @@ Here's another performance comparison with copying B-Tree.
 Naive `Swift.Dictionary` is not drawn here because read/write performance 
 is same with ephemeral one, and copying it takes too much time and didn't finish.
 
-![CRUD Performance](PerfTool/CRUD.png)
+![CRUD Performance](PerfTool/CRUD1.png)
 
 For small dataset, naive copying of `Swift.Dictionary` works better, but as 
 copying cost increases linearly, it is no longer efficient after 1,000 items.

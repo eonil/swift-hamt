@@ -200,8 +200,8 @@
 		45F7BD7C2297C7D5001C4BF9 /* PD5CompressedTableUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5CompressedTableUnitTests.swift; sourceTree = "<group>"; };
 		45F7BD802297D53E001C4BF9 /* PD5IterationUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5IterationUnitTests.swift; sourceTree = "<group>"; };
 		45F7BD832297F3B4001C4BF9 /* Perf.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = Perf.numbers; sourceTree = "<group>"; };
-		45F7BD842297F456001C4BF9 /* Get.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Get.png; sourceTree = "<group>"; };
-		45F7BD852297F456001C4BF9 /* CRUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CRUD.png; sourceTree = "<group>"; };
+		45F7BD842297F456001C4BF9 /* Get1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Get1.png; sourceTree = "<group>"; };
+		45F7BD852297F456001C4BF9 /* CRUD1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CRUD1.png; sourceTree = "<group>"; };
 		45F7BD872297FB58001C4BF9 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,8 +339,8 @@
 				456B65A32294EB080063FCB5 /* main.swift */,
 				456B65E5229514780063FCB5 /* DB.swift */,
 				456B65A12294EB080063FCB5 /* FormattingUtilities.swift */,
-				45F7BD852297F456001C4BF9 /* CRUD.png */,
-				45F7BD842297F456001C4BF9 /* Get.png */,
+				45F7BD852297F456001C4BF9 /* CRUD1.png */,
+				45F7BD842297F456001C4BF9 /* Get1.png */,
 				45F7BD832297F3B4001C4BF9 /* Perf.numbers */,
 				4547CCD42296B6000080C52E /* BTree */,
 			);
