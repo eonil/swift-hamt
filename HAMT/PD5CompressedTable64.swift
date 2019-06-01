@@ -8,7 +8,7 @@
 struct PD5CompressedTable64<T>: Sequence {
     typealias Element = T
     private var bitmap = UInt64(0b0)
-    private var slots = ContiguousArray<T>()
+    private var slots = PD5ImmutableArray<T>()
 
     @inlinable
     var capacity: Int {
@@ -19,7 +19,7 @@ struct PD5CompressedTable64<T>: Sequence {
         return bitmap.nonzeroBitCount
     }
     @inlinable
-    func makeIterator() -> ContiguousArray<T>.Iterator {
+    func makeIterator() -> PD5ImmutableArray<T>.Iterator {
         return slots.makeIterator()
     }
 

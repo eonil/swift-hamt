@@ -26,7 +26,9 @@
 /// Due to its tree-based structure, `Map` is able to provide efficient implementations for several operations 
 /// that would be slower with dictionaries.
 ///
-public struct Map<Key: Comparable, Value> {
+public struct Map<K: Comparable, V> {
+    public typealias Key = K
+    public typealias Value = V
     // Typealiases
     internal typealias Tree = BTree<Key, Value>
 

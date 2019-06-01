@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4539C49A229F96FA008AB6E5 /* PD5FixedSizeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4539C499229F96FA008AB6E5 /* PD5FixedSizeArray.swift */; };
 		4547CC712296B1240080C52E /* HAMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456360502296798000AAD1DC /* HAMT.swift */; };
 		4547CC722296B1240080C52E /* PD5Bucket64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456709462295654F0083EF06 /* PD5Bucket64.swift */; };
 		4547CC732296B1240080C52E /* PD5Slot64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC432922966AA9001B101E /* PD5Slot64.swift */; };
@@ -60,6 +61,10 @@
 		456B65E22294FD210063FCB5 /* PD4BucketMock2BasedUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B65E12294FD210063FCB5 /* PD4BucketMock2BasedUnitTests.swift */; };
 		456B65E42294FDB80063FCB5 /* PD4BucketMocklessUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B65E32294FDB80063FCB5 /* PD4BucketMocklessUnitTests.swift */; };
 		456B65E6229514780063FCB5 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B65E5229514780063FCB5 /* DB.swift */; };
+		45D95B8022A2B63600349C51 /* PD5ImmutableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D95B7F22A2B63600349C51 /* PD5ImmutableArray.swift */; };
+		45D95B8122A2BB2500349C51 /* PD5ImmutableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D95B7F22A2B63600349C51 /* PD5ImmutableArray.swift */; };
+		45D95B8222A2BB2500349C51 /* PD5ImmutableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D95B7F22A2B63600349C51 /* PD5ImmutableArray.swift */; };
+		45D95B8422A2BB2700349C51 /* PD5ImmutableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D95B7F22A2B63600349C51 /* PD5ImmutableArray.swift */; };
 		45DBBED822978C6500E80F33 /* libHAMT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B655D2294EA680063FCB5 /* libHAMT.a */; };
 		45DBBF092297AFBD00E80F33 /* PD5UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DBBED522978C6500E80F33 /* PD5UnitTests.swift */; };
 		45F55F482296C11900840163 /* PD5BucketConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F55F472296C11900840163 /* PD5BucketConfig.swift */; };
@@ -126,6 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4539C499229F96FA008AB6E5 /* PD5FixedSizeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5FixedSizeArray.swift; sourceTree = "<group>"; };
 		4547CCB32296B43C0080C52E /* SortedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedSet.swift; sourceTree = "<group>"; };
 		4547CCB42296B43C0080C52E /* BTreeComparisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTreeComparisons.swift; sourceTree = "<group>"; };
 		4547CCB52296B43C0080C52E /* SortedBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedBag.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 		45CC43272296585A001B101E /* PD5Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5Iterator.swift; sourceTree = "<group>"; };
 		45CC432922966AA9001B101E /* PD5Slot64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5Slot64.swift; sourceTree = "<group>"; };
 		45CC432B229670B0001B101E /* PD5Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5Hashable.swift; sourceTree = "<group>"; };
+		45D95B7F22A2B63600349C51 /* PD5ImmutableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5ImmutableArray.swift; sourceTree = "<group>"; };
 		45DBBED322978C6500E80F33 /* PD5UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PD5UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DBBED522978C6500E80F33 /* PD5UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5UnitTests.swift; sourceTree = "<group>"; };
 		45DBBED722978C6500E80F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -320,6 +327,8 @@
 				45CC43272296585A001B101E /* PD5Iterator.swift */,
 				45CC432522964571001B101E /* PD5CompressedTable64.swift */,
 				45CC432B229670B0001B101E /* PD5Hashable.swift */,
+				4539C499229F96FA008AB6E5 /* PD5FixedSizeArray.swift */,
+				45D95B7F22A2B63600349C51 /* PD5ImmutableArray.swift */,
 				45F7BD7F2297D23D001C4BF9 /* BetterLocalityConcept1Failed */,
 				45F7BD7E2297D22B001C4BF9 /* BetterLocalityConcept2WorksLittle */,
 				45F7BD862297F8C7001C4BF9 /* LegacyNaiveHashTrie */,
@@ -611,8 +620,10 @@
 				45F55F4C2296C46500840163 /* PD5Pair.swift in Sources */,
 				456360512296798000AAD1DC /* HAMT.swift in Sources */,
 				456360442296790900AAD1DC /* PD5CompressedTable64.swift in Sources */,
+				45D95B8022A2B63600349C51 /* PD5ImmutableArray.swift in Sources */,
 				45F55F482296C11900840163 /* PD5BucketConfig.swift in Sources */,
 				456360422296790900AAD1DC /* PD5Slot64.swift in Sources */,
+				4539C49A229F96FA008AB6E5 /* PD5FixedSizeArray.swift in Sources */,
 				456360412296790900AAD1DC /* PD5Bucket64.swift in Sources */,
 				456360432296790900AAD1DC /* PD5Iterator.swift in Sources */,
 				45F55F4E2296C4C800840163 /* PD5Bucket.swift in Sources */,
@@ -624,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D95B8122A2BB2500349C51 /* PD5ImmutableArray.swift in Sources */,
 				45F55F592296C73000840163 /* PD5Pair.swift in Sources */,
 				45F55F552296C73000840163 /* PD5Bucket.swift in Sources */,
 				4547CC772296B1250080C52E /* HAMT.swift in Sources */,
@@ -640,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D95B8222A2BB2500349C51 /* PD5ImmutableArray.swift in Sources */,
 				45F55F532296C72F00840163 /* PD5Pair.swift in Sources */,
 				45F55F4F2296C72F00840163 /* PD5Bucket.swift in Sources */,
 				4547CC782296B1250080C52E /* HAMT.swift in Sources */,
@@ -680,6 +693,7 @@
 				4547CCC82296B43C0080C52E /* BTreePath.swift in Sources */,
 				4547CCCD2296B43C0080C52E /* BTree.swift in Sources */,
 				4547CCD32296B43C0080C52E /* BTreeNode.swift in Sources */,
+				45D95B8422A2BB2700349C51 /* PD5ImmutableArray.swift in Sources */,
 				456B65A52294EB080063FCB5 /* FormattingUtilities.swift in Sources */,
 				4547CCC92296B43C0080C52E /* BTreeIterator.swift in Sources */,
 				456B65E6229514780063FCB5 /* DB.swift in Sources */,

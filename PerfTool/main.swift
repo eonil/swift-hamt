@@ -33,8 +33,8 @@ func run(_ single_op: (Int) -> Void) -> [Double] {
             let d = timeDelta / innerLoopCount
             print("  \(i+1)k: \(d.metricPrefixedNanoSeconds())")
         }
-        if timeDelta > 100_000_000 {
-            print(" iteration takes over 100ms. and too slow. cancel test.")
+        if timeDelta > 500_000_000 {
+            print(" iteration takes over 500ms. and too slow. cancel test.")
             return data
         }
     }
