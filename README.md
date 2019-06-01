@@ -10,9 +10,10 @@ Getting Started
 Use `HAMT` type. This type provides these features.
 
 - Hash-based key-value storage.
-- All of read/write/copy `O(log(n))` time up to certain number of elements (see [Performance](#Performance) section), and `O(n)` at worst.
+- All of read/write/copy `amortized O(log(n))` time up to certain number of elements
+  (see [Performance](#Performance) section), and `O(n)` at worst.
 - Full ["Copy-on-Write"](https://en.wikipedia.org/wiki/Copy-on-write) behavior 
-with minimal amount of copying.
+  with minimal amount of copying.
 
 The type provides these dictionary-like interfaces.
    
@@ -32,11 +33,12 @@ These features are not supported (maybe yet).
 
 
 Copy-on-Write Persistence
---------------------------------
+---------------------------------------------
 As like most Swift datastrctures, `HAMT` is also fully CoW compliant. This means 
 each copy of same HAMT tree shares data as much as much possible. Regardles 
 of how many copies you make, HAMT shares most portion of tree with all other
 copies.
+
 
 
 Performance
@@ -44,14 +46,14 @@ Performance
 `HAMT` type in this library is designed to be used as
 [*persistent datastructure*](https://en.wikipedia.org/wiki/Persistent_data_structure).
 
-Under copy-persistent scenario, 
+In copy-persistent scenario under 64-bit environment, 
 `HAMT` provides near constant time (`O(log(n)) & max depth=10, -> O(10)`) single element read/write/copy
 performance up to hash resolution limit (`(2^6)^10` items) regardless of contained item 
 count if hash function is well distributed. Also new copy does not take extra space unless
-gets mutated. Copy with single element mutation takes `O(1)` extra time and space.
+gets mutated. Copy with single element mutation takes `O(log(n))` extra time and space.
 On the other hand, copying `Swift.Dictionary` takes `O(n)` time and extra space. 
 
-Instead, single element read/write of `HAMT` is about 10x/50x times slower
+Instead, single element read/write of `HAMT` is about 2x/50x times slower
 than ephemeral `Swift.Dictionary` for random 64-bit integer keys and values.
 
 ![Get Performance](PerfTool/Get.png)
@@ -65,10 +67,16 @@ is same with ephemeral one, and copying it takes too much time and didn't finish
 ![CRUD Performance](PerfTool/CRUD.png)
 
 For small dataset, naive copying of `Swift.Dictionary` works better, but as 
-copying cost increases linearly, it is no longer efficient after 1,000-5,000 items. 
+copying cost increases linearly, it is no longer efficient after 1,000 items.
 
 Therefore, `HAMT` is better if you need a hash-based persistent associative array
 data structure that can grow more than several thousands.
+
+B-Tree shows better write performance overall. HAMT performs better after 100K 
+items, but it doesn't seem to be really practical numbers. And it requires keys
+to be `Comparable`. By the way, as B-Tree doesn't have hash collision, it'll show
+more reliable performance.
+
 
 
 
@@ -91,7 +99,8 @@ a next version of algorithm, it'll be named as `PD6`.
 If once implementation gets stabilized, maybe I'll rename all `PDx` prefixes
 to `HAMT` someday.
 
-
+At this point, only 64-bit platforms are considered. It should work on
+32-bit platforms but less performance and have not been tested.
 
 
 
@@ -103,25 +112,6 @@ it's because Swift compiler does not inline and optimize over externally
 linked functions.
 You can compile HAMT source code with your code together in same 
 module to archive best possible performance.
-
-
-
-
-
-Discussion
-----------------
-For now, this `HAMT` is far slower than `Swift.Dictionary` on read.
-I think this is mainly because of cache misses due to bad data locality.
-I think this can be better by employing object-pooling technique 
-with `jemalloc`-like regular space allocation. I don't have much
-specific ideas on this yet.
-
-Though persistent data-structures are used to build a timeline,
-it's impossible to keep infinite number of versions. Therefore most 
-apps keep only certain number of snapshots, and this means 
-there's usually a limit in dataset size. If there's a limit, having an
-object-pool can provide some level of data locality in most
-scenarios.
 
 
 
