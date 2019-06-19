@@ -147,6 +147,7 @@
 		4547CCC12296B43C0080C52E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4547CCC22296B43C0080C52E /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		4547CCC32296B43C0080C52E /* BTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTreeNode.swift; sourceTree = "<group>"; };
+		4548E2A722BA9FA30099E410 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		456360502296798000AAD1DC /* HAMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAMT.swift; sourceTree = "<group>"; };
 		45670944229553AD0083EF06 /* PD4FixedSizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD4FixedSizedArray.swift; sourceTree = "<group>"; };
 		456709462295654F0083EF06 /* PD5Bucket64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PD5Bucket64.swift; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 			children = (
 				456B65DD2294EE2E0063FCB5 /* README.md */,
 				45F7BD872297FB58001C4BF9 /* LICENSE.md */,
+				4548E2A722BA9FA30099E410 /* Package.swift */,
 				456B65512294EA570063FCB5 /* HAMT */,
 				456B65972294EADE0063FCB5 /* PD4UnitTests */,
 				45DBBED422978C6500E80F33 /* PD5UnitTests */,
