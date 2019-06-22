@@ -9,7 +9,7 @@
 import Foundation
 import GameKit
 
-let averageCount = 100
+let averageCount = 10
 let outerLoopCount = 1_00
 let innerLoopCount = 1_000
 

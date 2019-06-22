@@ -14,7 +14,8 @@ import Foundation
 /// hash resolution limit (`(2^6)^10` items) for read/write/copy regardless of item count
 /// where copying `Swift.Dictionary` takes linearly increased time.
 ///
-/// Base read performance of `HAMT` is about 10x times slower than ephemeral `Swift.Dictionary`.
+/// Base read performance of `HAMT` is about 2x-50x times slower
+/// than ephemeral `Swift.Dictionary`.
 ///
 public struct HAMT<Key,Value> where Key: Hashable {
     private var root = PD5Bucket64<PD5Key<Key>,Value>()
