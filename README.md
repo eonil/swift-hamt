@@ -3,6 +3,8 @@ HAMT (for Swift)
 An implementation of [*HAMT(Hash Array Mapped Trie, Bagwell)*](https://en.wikipedia.org/wiki/Hash_array_mapped_trie) in Swift.
 Eonil, May 2019.
 
+[![Build Status](https://api.travis-ci.org/eonil/swift-hamt.svg)](https://travis-ci.org/eonil/swift-hamt)
+
 
 
 Getting Started
