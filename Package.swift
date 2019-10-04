@@ -1,32 +1,23 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.1
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 
-//
-//  Package.swift
-//  HAMT
-//
-//  Created by Henry on 2019/06/20.
-//
-
-import Foundation
 import PackageDescription
 
 let package = Package(
     name: "HAMT",
+    platforms: [
+        .macOS(.v10_11),
+    ],
     products: [
         .library(name: "HAMT", targets: ["HAMT"]),
+        .executable(name: "HAMTFuzz", targets: ["HAMTFuzz"])
     ],
-//    dependencies: [
-//        .package(url: "https://github.com/apple/example-package-fisheryates.git", from: "2.0.0"),
-//        .package(url: "https://github.com/apple/example-package-playingcard.git", from: "3.0.0"),
-//    ],
+    dependencies: [
+    ],
     targets: [
-        .target(
-            name: "HAMT",
-            dependencies: [],
-            path: "HAMT"),
-        .testTarget(
-            name: "PD5UnitTests",
-            dependencies: ["HAMT"],
-            path: "PD5UnitTests"),
+        .target(name: "HAMT", dependencies: [], path: "HAMT"),
+        .testTarget(name: "PD5UnitTests", dependencies: ["HAMT"], path: "PD5UnitTests"),
+        .target(name: "HAMTFuzz", dependencies: ["HAMT"], path: "HAMTFuzz"),
     ]
 )
+
