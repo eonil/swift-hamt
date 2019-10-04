@@ -16,6 +16,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "HAMT", dependencies: [], path: "HAMT"),
+        .testTarget(name: "HAMTTests", dependencies: ["HAMT"], path: "HAMTTests"),
         .testTarget(name: "PD5UnitTests", dependencies: ["HAMT"], path: "PD5UnitTests"),
         .target(name: "HAMTFuzz", dependencies: ["HAMT"], path: "HAMTFuzz"),
     ]

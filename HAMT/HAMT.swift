@@ -104,6 +104,12 @@ extension HAMT: Sequence {
     }
 }
 
+public extension HAMT {
+    mutating func removeAll() {
+        self = HAMT()
+    }
+}
+
 /// A zero-cost wrapper to route system hash value
 /// to `PD5Hashable` protocol.
 private struct PD5Key<K>: PD5Hashable where K: Hashable {
